@@ -32,7 +32,6 @@ function fluidfix (item,item_mb,desired_quantity,current_quantity) -- E.g. cobbl
 end
 
 function main() 
-	local count = 0
 	local fluid
 	-- Here you must put every fluid you want checked and write the logic yourself. I'm afraid there doesn't seem to be any way to do this programmatically.
 	local lava = 0
@@ -40,8 +39,7 @@ function main()
 	local creosote = 0
 
 	for v,k in pairs(getFluids) do
-		count = count + 1
-		fluid = getFluids[count]
+		fluid = getFluids[v]
 		if fluid == nil then -- Lua tables seem to output 1 more result than is "actually" there so to speak; this prevents crashing on this non-existent result.
 			break
 		end
