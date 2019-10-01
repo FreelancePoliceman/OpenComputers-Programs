@@ -24,13 +24,6 @@ function setexport(item, count)
 	end
 end
 
-function lavafix (fluidAmount) 
-	if fluidAmount < 100000 then
-		local quanitity_to_send = math.floor((100000 - fluidAmount)/1000)
-		setexport(cobblestone,quantity_to_send)
-	end
-end
-
 function fluidfix (item,item_mb,desired_quantity,current_quantity) -- E.g. cobblestone, 1000 (1 cobblestone = 1000 mb/1 bucket), 100000 mb in storage, current quantity in storage
 	if current_quantity < desired_quantity then
 		local quantity_to_send = math.floor((desired_quantity - current_quantity)/item_mb)
